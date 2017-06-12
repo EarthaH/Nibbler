@@ -1,8 +1,7 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include "object.hpp"
-#include "food.hpp"
+#include "header.hpp"
 
 class   Snake
 {
@@ -27,7 +26,6 @@ class   Snake
         void    moveLeft();
         void    moveRight();
         void    eat();
-        void    eat(Food &);
 
 };
 

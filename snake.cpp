@@ -1,5 +1,4 @@
 #include "snake.hpp"
-#include "food.hpp"
 
 Snake::Snake() : _size(4), _direction(0)
 {
