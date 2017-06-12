@@ -13,9 +13,9 @@ class   Food: public Object
     public:
         Food();
         Food(int, int);
-        Food(Snake const &);
-        Food(Snake const *);
-        Food(Snake const &, Game const &);
+        Food(Fnake const &);
+        Food(Fnake const *);
+        Food(Fnake const &, Game const &);
         Food(Food const &);
         Food const & operator=(Food const &);
         ~Food();

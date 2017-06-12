@@ -8,7 +8,7 @@
 
 #include "food.hpp"
 #include "object.hpp"
-#include "snake.hpp"
+#include "fnake.hpp"
 #include "header.hpp"
 
 class   Game 
@@ -25,10 +25,10 @@ class   Game
         ~Game();
         int     getWidth();
         int     getHeight();
-        bool    gotFood(Snake const &, Food &);
+        bool    gotFood(Fnake const &, Food &);
         void    start();
 
-        Snake   *snake;
+        Fnake   *fnake;
         Food    *food;
         int     score;
         

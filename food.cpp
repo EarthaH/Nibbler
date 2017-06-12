@@ -15,11 +15,11 @@ Food::Food(int x, int y) : _eaten(false)
     this->init(x, y, '*');
 }
 
-Food::Food(Snake const & snake) : _eaten(false)
+Food::Food(Fnake const & fnake) : _eaten(false)
 {
     int     x = rand();
     int     y = rand();
-    while (snakeHit(snake, x, y, 0))
+    while (fnakeHit(fnake, x, y, 0))
     {
         x = rand();
         y = rand();
@@ -27,11 +27,11 @@ Food::Food(Snake const & snake) : _eaten(false)
     this->init(x, y, '*');
 }
 
-Food::Food(Snake const & snake, Game const & game) : _eaten(false)
+Food::Food(Fnake const & fnake, Game const & game) : _eaten(false)
 {
     int     x = rand();
     int     y = rand();
-    while (snakeHit(snake, x, y, 0))
+    while (fnakeHit(fnake, x, y, 0))
     {
         x = rand();
         y = rand();
@@ -39,11 +39,11 @@ Food::Food(Snake const & snake, Game const & game) : _eaten(false)
     this->init(x, y, '*');
 }
 
-Food::Food(Snake const * snake) : _eaten(false)
+Food::Food(Fnake const * fnake) : _eaten(false)
 {
     int     x = rand();
     int     y = rand();
-    while (snakeHit(snake, x, y, 0))
+    while (fnakeHit(fnake, x, y, 0))
     {
         x = rand();
         y = rand();

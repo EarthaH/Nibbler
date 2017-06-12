@@ -5,7 +5,7 @@
 
 #include "food.hpp"
 #include "object.hpp"
-#include "snake.hpp"
+#include "fnake.hpp"
 #include "header.hpp"
 #include "game.hpp"
 
@@ -13,8 +13,8 @@ Game::Game() : _width(300), _height(300)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
-    this->snake = new Snake(x ,y);
-    this->food = new Food(snake);
+    this->fnake = new Fnake(x ,y);
+    this->food = new Food(fnake);
     score = 0;
 }
 
@@ -22,8 +22,8 @@ Game::Game(int w, int h) : _width(w), _height(h)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
-    this->snake = new Snake(x ,y);
-    this->food = new Food(snake);
+    this->fnake = new Fnake(x ,y);
+    this->food = new Food(fnake);
     score = 0;
 }
 
@@ -41,13 +41,13 @@ Game const & Game::operator=(Game const & copy)
 
 Game::~Game()
 {
-    delete this->snake;
+    delete this->fnake;
     delete this->food;
 }
 
-bool    Game::gotFood(Snake const & snake, Food & food)
+bool    Game::gotFood(Fnake const & fnake, Food & food)
 {
-    if (snake.body[0].getX() == food.getX() && snake.body[0].getY() == food.getY())
+    if (fnake.body[0].getX() == food.getX() && fnake.body[0].getY() == food.getY())
         return (true);
     return (false);
 }
@@ -56,11 +56,11 @@ void    Game::start()
 {
     for (;;)
     {
-        if (gotFood(*snake, *food))
+        if (gotFood(*fnake, *food))
         {
-            snake->eat();
+            fnake->eat();
             food->setEaten(true);
-            food = new Food(snake);
+            food = new Food(fnake);
         }
     }
 }

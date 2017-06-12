@@ -6,7 +6,7 @@
 
 #include "food.hpp"
 #include "object.hpp"
-#include "snake.hpp"
+#include "fnake.hpp"
 #include "game.hpp"
 
 void    start()

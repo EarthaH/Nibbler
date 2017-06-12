@@ -8,11 +8,11 @@
 
 #include "food.hpp"
 #include "object.hpp"
-#include "snake.hpp"
+#include "fnake.hpp"
 
 bool    equal(Object &, Object &);
 bool    equal(Object &, int, int);
-bool    snakeHit(Snake const &, Object &, int);
-bool    snakeHit(Snake const &, int, int, int);
+bool    fnakeHit(Fnake const &, Object &, int);
+bool    fnakeHit(Fnake const &, int, int, int);
 
 #endif

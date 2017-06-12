@@ -14,18 +14,18 @@ bool    equal(Object & obj, int x, int y)
     return (false);
 }
 
-bool    snakeHit(Snake const & snake, Object & obj, int start)
+bool    fnakeHit(Fnake const & fnake, Object & obj, int start)
 {
-    for (int i = start; i < snake.getSize(); i++)
-        if (equal(snake.body[i], obj))
+    for (int i = start; i < fnake.getSize(); i++)
+        if (equal(fnake.body[i], obj))
             return (true);
     return (false);
 }
 
-bool    snakeHit(Snake const & snake, int x, int y, int start)
+bool    fnakeHit(Fnake const & fnake, int x, int y, int start)
 {
-    for (int i = start; i < snake.getSize(); i++)
-        if (equal(snake.body[i], x, y))
+    for (int i = start; i < fnake.getSize(); i++)
+        if (equal(fnake.body[i], x, y))
             return (true);
     return (false);
 }

@@ -3,18 +3,18 @@
 
 #include "header.hpp"
 
-class   Snake
+class   Fnake
 {
     private:
         int     _size;
         int     _direction;
     
     public: 
-        Snake();
-        Snake(int, int);
-        Snake(Snake const &);
-        Snake const & operator=(Snake const &);
-        ~Snake();
+        Fnake();
+        Fnake(int, int);
+        Fnake(Fnake const &);
+        Fnake const & operator=(Fnake const &);
+        ~Fnake();
         Object  *body;
         int     getSize() const;
         int     getDirection() const;

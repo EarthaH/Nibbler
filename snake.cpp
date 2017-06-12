@@ -1,6 +1,6 @@
-#include "snake.hpp"
+#include "fnake.hpp"
 
-Snake::Snake() : _size(4), _direction(0)
+Fnake::Fnake() : _size(4), _direction(0)
 {
     this->body = new Object[_size];
     for (int x = 10, y = 10, i = 0; i < this->_size; i++, x--)
@@ -9,7 +9,7 @@ Snake::Snake() : _size(4), _direction(0)
     }
 }
 
-Snake::Snake(int x, int y) : _size(4), _direction(0)
+Fnake::Fnake(int x, int y) : _size(4), _direction(0)
 {
     this->body = new Object[_size];
     for (int i = 0; i < this->_size; i++, x--)
@@ -18,12 +18,12 @@ Snake::Snake(int x, int y) : _size(4), _direction(0)
     }
 }
 
-Snake::Snake(Snake const & copy)
+Fnake::Fnake(Fnake const & copy)
 {
     *this = copy;
 }
 
-Snake const & Snake::operator=(Snake const & copy)
+Fnake const & Fnake::operator=(Fnake const & copy)
 {
     this->_size = copy._size;
     this->_direction = copy._direction;
@@ -31,32 +31,32 @@ Snake const & Snake::operator=(Snake const & copy)
     return (*this);
 }
 
-Snake::~Snake()
+Fnake::~Fnake()
 {
     delete [] this->body;
 }
 
-int     Snake::getSize() const
+int     Fnake::getSize() const
 {
     return (this->_size);
 }
 
-int     Snake::getDirection() const 
+int     Fnake::getDirection() const 
 {
     return (this->_direction);
 }
 
-void    Snake::setSize(int size)
+void    Fnake::setSize(int size)
 {
     this->_size = size;
 }
 
-void    Snake::setDirection(int dir)
+void    Fnake::setDirection(int dir)
 {
     this->_direction = dir;
 }
 
-void    Snake::moveBody()
+void    Fnake::moveBody()
 {
     for (int i = 1, j = 0; i < this->_size; i++, j++)
     {
@@ -64,40 +64,40 @@ void    Snake::moveBody()
     }
 }
 
-void    Snake::moveUp()
+void    Fnake::moveUp()
 {
     this->body[0].move(this->body[0].getX(), this->body[0].getY() - 1);
     this->moveBody();
 }
 
-void    Snake::moveDown()
+void    Fnake::moveDown()
 {
     this->body[0].move(this->body[0].getX(), this->body[0].getY() + 1);
     this->moveBody();
 }
 
-void    Snake::moveLeft()
+void    Fnake::moveLeft()
 {
     this->body[0].move(this->body[0].getX() - 1, this->body[0].getY());
     this->moveBody();
 }
 
-void    Snake::moveRight()
+void    Fnake::moveRight()
 {
     this->body[0].move(this->body[0].getX() + 1, this->body[0].getY());
     this->moveBody();
 }
 
-void    Snake::eat()
+void    Fnake::eat()
 {
     this->_size++;
-    Object  *newSnake = new Object[this->_size];
+    Object  *newFnake = new Object[this->_size];
     for (int i = 0; i < this->_size - 1; i++)
     {
-        newSnake[i] = this->body[i];
+        newFnake[i] = this->body[i];
     }
     delete [] this->body;
-    newSnake[this->_size].init(newSnake[this->_size - 1].getOldX(), newSnake[this->_size - 1].getOldY(), 'o');
-    this->body = newSnake;
-    delete [] newSnake;
+    newFnake[this->_size].init(newFnake[this->_size - 1].getOldX(), newFnake[this->_size - 1].getOldY(), 'o');
+    this->body = newFnake;
+    delete [] newFnake;
 }
