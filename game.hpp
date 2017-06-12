@@ -27,6 +27,7 @@ class   Game
         int     getHeight();
         bool    gotFood(Fnake const &, Food &);
         void    start();
+        void    move();
 
         Fnake   *fnake;
         Food    *food;

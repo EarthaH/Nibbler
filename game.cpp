@@ -2,6 +2,8 @@
 #include <ctime>
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
+#include <unistd.h>
 
 #include "food.hpp"
 #include "object.hpp"
@@ -62,7 +64,23 @@ void    Game::start()
             food->setEaten(true);
             food = new Food(fnake);
         }
+        move();
+        sleep(3000);
     }
+}
+
+void    Game::move()
+{
+    int     dir = this->fnake->getDirection();
+
+    if (dir == RIGHT)
+        this->fnake->moveRight();
+    else if (dir == LEFT)
+        this->fnake->moveLeft();
+    else if (dir == UP)
+        this->fnake->moveUp();
+    else if (dir == DOWN)
+        this->fnake->moveDown();
 }
 
 int     Game::getWidth()

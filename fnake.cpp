@@ -1,6 +1,6 @@
 #include "fnake.hpp"
 
-Fnake::Fnake() : _size(4), _direction(0)
+Fnake::Fnake() : _size(4), _direction(RIGHT)
 {
     this->body = new Object[_size];
     for (int x = 10, y = 10, i = 0; i < this->_size; i++, x--)
@@ -9,7 +9,7 @@ Fnake::Fnake() : _size(4), _direction(0)
     }
 }
 
-Fnake::Fnake(int x, int y) : _size(4), _direction(0)
+Fnake::Fnake(int x, int y) : _size(4), _direction(RIGHT)
 {
     this->body = new Object[_size];
     for (int i = 0; i < this->_size; i++, x--)

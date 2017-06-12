@@ -9,26 +9,21 @@
 #include "fnake.hpp"
 #include "game.hpp"
 
-void    start()
+int     x;
+int     y;
+
+void    getSize(int ac, char **av)
 {
-    
-
-}
-
-int     main(int argc, char **argv)
-{
-    int     x, y;
-
-    if (argc == 3)
+    if (ac == 3)
     {
         try
         {
-            x = atoi(argv[1]);
-            y = atoi(argv[2]);
+            x = atoi(av[1]);
+            y = atoi(av[2]);
         }
         catch (...)
         {
-            std::cout << "Yes a window can totally be of size " << argv[1] << " x " << argv[2] << std::endl;
+            std::cout << "Yes a window can totally be of size " << av[1] << " x " << av[2] << std::endl;
             std::cout << "Come back when you know what an int is!" << std::endl;
             exit(0);
         }
@@ -38,6 +33,11 @@ int     main(int argc, char **argv)
         x = 300;
         y = 200;
     }
+}
+
+int     main(int argc, char **argv)
+{
+    getSize(argc, argv);
     
     srand((unsigned)time(0));
 
