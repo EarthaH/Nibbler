@@ -1,5 +1,5 @@
-#ifndef SNAKE_H
-#define SNAKE_H
+#ifndef FNAKE_H
+#define FNAKE_H
 
 #include "header.hpp"
 
