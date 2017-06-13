@@ -20,6 +20,7 @@ void    getSize(int ac, char **av)
         {
             x = atoi(av[1]);
             y = atoi(av[2]);
+            // Add max height and width handle
         }
         catch (...)
         {
@@ -30,8 +31,8 @@ void    getSize(int ac, char **av)
     }
     else
     {
-        x = 300;
-        y = 200;
+        std::cout << "It seems you need womans help... Usage: av[1] = width, av[2] = height" << std::endl;
+        exit(0);
     }
 }
 
