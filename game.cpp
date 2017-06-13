@@ -11,7 +11,7 @@
 #include "header.hpp"
 #include "game.hpp"
 
-Game::Game() : _width(300), _height(300), score(0)
+Game::Game() : _width(300), _height(300), score(0), speed(3000)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
@@ -20,7 +20,7 @@ Game::Game() : _width(300), _height(300), score(0)
     score = 0;
 }
 
-Game::Game(int w, int h) : _width(w), _height(h), score(0)
+Game::Game(int w, int h) : _width(w), _height(h), score(0), speed(3000)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
@@ -60,16 +60,17 @@ void    Game::start()
             food->setEaten(true);
             food = new Food(fnake);
             this->score += 10;
+            this->speed -= 10;
         }
         move();
         if (!blockClear())
             end();
-        sleep(3000);
+        sleep(this->speed);
     }
 }
 
 /* Check if snake hit food */
-
+// Unknown error -> won't accept 'gotFood' 
 bool    Game::gotFood(Fnake const & fnake, Food & food)
 {
     if (fnake.body[0].getX() == food.getX() && fnake.body[0].getY() == food.getY())

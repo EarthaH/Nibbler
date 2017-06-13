@@ -34,6 +34,7 @@ class   Game
         Fnake   *fnake;
         Food    *food;
         int     score;
+        int     speed;
         
 };
 
