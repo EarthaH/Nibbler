@@ -60,7 +60,7 @@ void    Game::start()
             food->setEaten(true);
             food = new Food(fnake);
             this->score += 10;
-            this->speed -= 10;
+            this->speed -= this->speed > 500 ? 10 : 0;
         }
         move();
         if (!blockClear())
