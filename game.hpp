@@ -25,9 +25,11 @@ class   Game
         ~Game();
         int     getWidth();
         int     getHeight();
-        bool    gotFood(Fnake const &, Food &);
+        bool    gotFood(Fnake const & fnake, Food & food);
+        bool    blockClear();
         void    start();
         void    move();
+        void    end();
 
         Fnake   *fnake;
         Food    *food;
