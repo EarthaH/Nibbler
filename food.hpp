@@ -2,6 +2,7 @@
 # define FOOD_H
 
 #include "header.hpp"
+//#include "object.hpp"
 //#include "fnake.hpp"
 //////////////////
 /*
@@ -10,17 +11,13 @@
 #include "fnake.hpp"
 */
 
-
 //class   Object;
 
 //#include "object.hpp"
 
-
-
-
 class   Fnake;
 class   Game;
-//class   Object;
+class   Object;
 
 class   Food: public Object
 {

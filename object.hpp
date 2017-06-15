@@ -1,8 +1,6 @@
 #ifndef OBJECT_H
 # define OBJECT_H
 
-#include "header.hpp"
-
 class Object
 {
     protected:
