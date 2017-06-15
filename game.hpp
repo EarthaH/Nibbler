@@ -1,15 +1,18 @@
 #ifndef GAME_H
 # define GAME_H
 
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <cstdlib>
-
-#include "food.hpp"
+#include "header.hpp"
+///////////////////////////////
+/*
 #include "object.hpp"
 #include "fnake.hpp"
-#include "header.hpp"
+#include "food.hpp"
+*/
+
+
+class   Fnake;
+//class   Object;
+class   Food;//: public Object;//might need to take out inheritance
 
 class   Game 
 {
@@ -19,7 +22,7 @@ class   Game
 
     public:
         Game();
-        Game(int, int);
+        Game(int w, int h);
         Game(Game const &);
         Game const & operator=(Game const &);
         ~Game();

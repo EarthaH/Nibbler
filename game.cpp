@@ -1,14 +1,3 @@
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <cstdlib>
-#include <time.h>
-#include <unistd.h>
-
-#include "food.hpp"
-#include "object.hpp"
-#include "fnake.hpp"
-#include "header.hpp"
 #include "game.hpp"
 
 Game::Game() : _width(300), _height(300), score(0), speed(3000)
@@ -78,7 +67,7 @@ bool    Game::gotFood(Fnake const & fnake, Food & food)
     return (false);
 }
 
-/* Move snake in set direction */
+/* Move snake in set direction */ //also which direction snakes will move in
 
 void    Game::move()
 {

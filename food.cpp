@@ -1,7 +1,12 @@
 #include "food.hpp"
-#include "object.hpp"
-#include "game.hpp"
+//#include "object.hpp"
+//#include "game.hpp"
+//////////////////////
 
+bool    fnakeHit(Fnake const &, Object &, int);
+bool    fnakeHit(Fnake const &, int, int, int);
+
+//////////////////////
 Food::Food() : _eaten(false)
 {
     int     x = rand();
@@ -27,7 +32,7 @@ Food::Food(Fnake const & fnake) : _eaten(false)
     this->init(x, y, '*');
 }
 
-Food::Food(Fnake const & fnake, Game const & game) : _eaten(false)
+Food::Food(Fnake const & fnake, Game const & game) : _eaten(false)//why is game here? it is not used here at all. need to add a cout to make it useful
 {
     int     x = rand();
     int     y = rand();
@@ -37,13 +42,19 @@ Food::Food(Fnake const & fnake, Game const & game) : _eaten(false)
         y = rand();
     }
     this->init(x, y, '*');
+    ///random code ot make it work
+    std::cout << game.score << " testing I guess" << std::endl;
 }
 
 Food::Food(Fnake const * fnake) : _eaten(false)
 {
     int     x = rand();
     int     y = rand();
-    while (fnakeHit(fnake, x, y, 0))
+
+    ///////
+   // Fnake   const &tempFnake = *fnake;
+    ///////
+    while (fnakeHit(*fnake, x, y, 0))//added * to make it work
     {
         x = rand();
         y = rand();

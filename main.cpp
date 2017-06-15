@@ -1,13 +1,4 @@
 #include "header.hpp"
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <cstdlib>
-
-#include "food.hpp"
-#include "object.hpp"
-#include "fnake.hpp"
-#include "game.hpp"
 
 int     x;
 int     y;
