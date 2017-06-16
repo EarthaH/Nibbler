@@ -25,10 +25,7 @@ Food::Food(Fnake const * fnake, int w, int h) : _eaten(false)
     int     x = rand() % w;
     int     y = rand() % h;
 
-    ///////
-   // Fnake   const &tempFnake = *fnake;
-    ///////
-    while (fnakeHit(*fnake, x, y, 0))//added * to make it work
+    while (fnakeHit(*fnake, x, y, 0))
     {
         x = rand();
         y = rand();

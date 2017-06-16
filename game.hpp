@@ -3,17 +3,9 @@
 
 #include "header.hpp"
 #include <thread>
-///////////////////////////////
-/*
-#include "object.hpp"
-#include "fnake.hpp"
-#include "food.hpp"
-*/
-
 
 class   Fnake;
-//class   Object;
-class   Food;//: public Object;//might need to take out inheritance
+class   Food;
 
 class   Game 
 {

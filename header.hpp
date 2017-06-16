@@ -17,13 +17,6 @@
 #define UP 3
 #define DOWN 4
 
-
-
-//class   Fnake;
-//class   Game;
-//class   Object;
-//class   Food;
-
 bool    equal(Object &, Object &);
 bool    equal(Object &, int, int);
 bool    fnakeHit(Fnake const &, Object &, int);

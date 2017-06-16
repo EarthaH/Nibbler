@@ -59,7 +59,7 @@ void    Game::start()
 }
 
 /* Check if snake hit food */
-// Unknown error -> won't accept 'gotFood' 
+
 bool    Game::gotFood(Fnake const & fnake, Food & food)
 {
     if (fnake.body[0].getX() == food.getX() && fnake.body[0].getY() == food.getY())
@@ -106,7 +106,6 @@ void    Game::end()
     delete this->food;
     std::cout << "Game over! Score: " << this->score << std::endl;
     exit(0);
-    // Display user results and give option to exit or restart
 }
 
 int     Game::getWidth()

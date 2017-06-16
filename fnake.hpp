@@ -2,19 +2,8 @@
 #define FNAKE_H
 
 #include "header.hpp"
-////////////
-/*
-#include "game.hpp"
-#include "object.hpp"
-#include "food.hpp"
-*/
-
-
-
 
 class   Object;
-
-
 
 class   Fnake
 {
