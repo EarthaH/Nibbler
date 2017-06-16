@@ -2,6 +2,7 @@
 # define GAME_H
 
 #include "header.hpp"
+#include <thread>
 ///////////////////////////////
 /*
 #include "object.hpp"

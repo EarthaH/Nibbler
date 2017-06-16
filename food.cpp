@@ -20,36 +20,10 @@ Food::Food(int x, int y) : _eaten(false)
     this->init(x, y, '*');
 }
 
-Food::Food(Fnake const & fnake) : _eaten(false)
+Food::Food(Fnake const * fnake, int w, int h) : _eaten(false)
 {
-    int     x = rand();
-    int     y = rand();
-    while (fnakeHit(fnake, x, y, 0))
-    {
-        x = rand();
-        y = rand();
-    }
-    this->init(x, y, '*');
-}
-
-Food::Food(Fnake const & fnake, Game const & game) : _eaten(false)//why is game here? it is not used here at all. need to add a cout to make it useful
-{
-    int     x = rand();
-    int     y = rand();
-    while (fnakeHit(fnake, x, y, 0))
-    {
-        x = rand();
-        y = rand();
-    }
-    this->init(x, y, '*');
-    ///random code ot make it work
-    std::cout << game.score << " testing I guess" << std::endl;
-}
-
-Food::Food(Fnake const * fnake) : _eaten(false)
-{
-    int     x = rand();
-    int     y = rand();
+    int     x = rand() % w;
+    int     y = rand() % h;
 
     ///////
    // Fnake   const &tempFnake = *fnake;

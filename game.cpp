@@ -1,20 +1,20 @@
 #include "game.hpp"
 
-Game::Game() : _width(300), _height(300), score(0), speed(3000)
+Game::Game() : _width(300), _height(300), score(0), speed(2000)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
     this->fnake = new Fnake(x ,y);
-    this->food = new Food(fnake);
+    this->food = new Food(fnake, this->_width, this->_height);
     score = 0;
 }
 
-Game::Game(int w, int h) : _width(w), _height(h), score(0), speed(3000)
+Game::Game(int w, int h) : _width(w), _height(h), score(0), speed(2000)
 {
     int     x = this->_width / 2;
     int     y = this->_height / 2;
     this->fnake = new Fnake(x ,y);
-    this->food = new Food(fnake);
+    this->food = new Food(fnake, this->_width, this->_height);
     score = 0;
 }
 
@@ -47,14 +47,14 @@ void    Game::start()
         {
             fnake->eat();
             food->setEaten(true);
-            food = new Food(fnake);
+            food = new Food(fnake, this->_width, this->_height);
             this->score += 10;
-            this->speed -= this->speed > 500 ? 10 : 0;
+            this->speed -= this->speed > 100 ? 10 : 0;
         }
         move();
         if (!blockClear())
             end();
-        sleep(this->speed);
+        std::this_thread::sleep_for(std::chrono::milliseconds(this->speed));
     }
 }
 
@@ -102,6 +102,10 @@ bool    Game::blockClear()
 
 void    Game::end()
 {
+    delete this->fnake;
+    delete this->food;
+    std::cout << "Game over! Score: " << this->score << std::endl;
+    exit(0);
     // Display user results and give option to exit or restart
 }
 
