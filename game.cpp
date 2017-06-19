@@ -55,6 +55,7 @@ void    Game::start()
         move();
         if (!blockClear())
             end();
+            
         std::this_thread::sleep_for(std::chrono::milliseconds(this->speed));
     }
 }
@@ -63,7 +64,7 @@ void    Game::start()
 
 bool    Game::gotFood(Fnake const & fnake, Food & food)
 {
-    if (fnake.body[0].getX() == food.getX() && fnake.body[0].getY() == food.getY())
+    if (fnake.body->front().getX() == food.getX() && fnake.body->front().getY() == food.getY())
         return (true);
     return (false);
 }
@@ -82,21 +83,21 @@ void    Game::move()
         this->fnake->moveUp();
     else if (dir == DOWN)
         this->fnake->moveDown();
-    std::cout << "Snake moved from: " << this->fnake->body[0].getOldX() << " " \
-     << this->fnake->body[0].getOldY() << " to: " << this->fnake->body[0].getX() \
-     << " " << this->fnake->body[0].getY() << std::endl;
+    std::cout << "Snake moved from: " << this->fnake->body->front().getOldX() << " " \
+     << this->fnake->body->front().getOldY() << " to: " << this->fnake->body->front().getX() \
+     << " " << this->fnake->body->front().getY() << std::endl;
 }
 
 /* Check that snake is not dead */
 
 bool    Game::blockClear()
 {
-    int     x = this->fnake->body[0].getX();
-    int     y = this->fnake->body[0].getY();
+    int     x = this->fnake->body->front().getX();
+    int     y = this->fnake->body->front().getY();
 
     if (x == 0 || y == 0 || x == this->_width || y == this->_height)
         return (false);
-    if (fnakeHit(*this->fnake, this->fnake->body[0], 1))
+    if (fnakeHit(*this->fnake, this->fnake->body->front(), 1))
         return (false);
     
     return (true);

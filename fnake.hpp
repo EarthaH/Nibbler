@@ -2,6 +2,7 @@
 #define FNAKE_H
 
 #include "header.hpp"
+#include <vector>
 
 class   Object;
 
@@ -17,7 +18,7 @@ class   Fnake
         Fnake(Fnake const &);
         Fnake const & operator=(Fnake const &);
         ~Fnake();
-        Object  *body;
+        std::vector<Object> *body;
         int     getSize() const;
         int     getDirection() const;
         void    setSize(int);
