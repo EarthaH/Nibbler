@@ -102,8 +102,11 @@ void    Fnake::moveRight()
 
 void    Fnake::eat()
 {
-    Object  bod(body->at(_size).getOldX(), body->at(_size).getOldY(), 'o');
+    int     x = this->body->at(this->_size - 1).getOldX();
+    int     y = this->body->at(this->_size - 1).getOldY();
+    
+    Object  bod(x, y, 'o');
 
-    body->push_back(bod);
+    this->body->push_back(bod);
     _size++;
 }

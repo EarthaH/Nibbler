@@ -1,6 +1,4 @@
 #include "food.hpp"
-//#include "object.hpp"
-//#include "game.hpp"
 //////////////////////
 
 bool    fnakeHit(Fnake const &, Object &, int);
@@ -27,8 +25,8 @@ Food::Food(Fnake const * fnake, int w, int h) : _eaten(false)
 
     while (fnakeHit(*fnake, x, y, 0))
     {
-        x = rand();
-        y = rand();
+        x = rand() % w;
+        y = rand() % h;
     }
     this->init(x, y, '*');
 }
