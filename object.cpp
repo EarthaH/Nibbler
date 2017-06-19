@@ -2,7 +2,7 @@
 
 Object::Object() : _x(10), _y(10), _ch('*')
 {
-
+    //std::cout << "Object '" << _ch << "' created at: " << _x << " " << _y << std::endl;
 }
 
 Object::Object(Object const & copy)
@@ -12,7 +12,7 @@ Object::Object(Object const & copy)
 
 Object::Object(int x, int y, char ch) : _x(x), _y(y), _ch(ch)
 {
-
+    std::cout << "Object '" << _ch << "' created at: " << _x << " " << _y << std::endl;
 }
 
 Object const & Object::operator=(Object const & copy)
@@ -73,4 +73,5 @@ void    Object::init(int x, int y, char ch)
     this->_x = x;
     this->_y = y;
     this->_ch = ch;
+    std::cout << "Object '" << _ch << "' init at: " << _x << " " << _y << std::endl; 
 }

@@ -59,4 +59,5 @@ void    Food::setEaten(bool eaten)
     this->_eaten = eaten;
     if (this->_eaten)
         delete this;
+    std::cout << "Food eaten." << std::endl;
 }

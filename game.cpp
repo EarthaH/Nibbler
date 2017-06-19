@@ -46,10 +46,11 @@ void    Game::start()
         if (gotFood(*fnake, *food))
         {
             fnake->eat();
-            food->setEaten(true);
+            delete food;
             food = new Food(fnake, this->_width, this->_height);
             this->score += 10;
             this->speed -= this->speed > 100 ? 10 : 0;
+            std::cout << "Game speed now: " << this->speed << std::endl;
         }
         move();
         if (!blockClear())
@@ -81,6 +82,9 @@ void    Game::move()
         this->fnake->moveUp();
     else if (dir == DOWN)
         this->fnake->moveDown();
+    std::cout << "Snake moved from: " << this->fnake->body[0].getOldX() << " " \
+     << this->fnake->body[0].getOldY() << " to: " << this->fnake->body[0].getX() \
+     << " " << this->fnake->body[0].getY() << std::endl;
 }
 
 /* Check that snake is not dead */
