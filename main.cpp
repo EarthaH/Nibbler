@@ -11,7 +11,8 @@ void    getSize(int ac, char **av)
         {
             x = atoi(av[1]);
             y = atoi(av[2]);
-            // Add max height and width handle
+            if (x < 10 || y < 10 || x > 1000 || y > 1000)
+                throw std::overflow_error("incorrect size") ;
         }
         catch (...)
         {
