@@ -6,6 +6,7 @@
 #include <iostream>
 #include <time.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #include "object.hpp"
 #include "food.hpp"

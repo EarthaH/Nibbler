@@ -3,14 +3,24 @@
 int     x;
 int     y;
 
+bool    allNum(std::string & str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+        if (!isdigit(str[i]))
+            return (false);
+    return (true);
+}
+
 void    getSize(int ac, char **av)
 {
     if (ac == 3)
     {
         try
         {
-            x = atoi(av[1]);
-            y = atoi(av[2]);
+            std::string a1(av[1]);
+            std::string a2(av[2]);
+            x = allNum(a1) ? atoi(av[1]) : throw std::overflow_error("incorrect size");
+            y = allNum(a2) ? atoi(av[2]) : throw std::overflow_error("incorrect size");
             if (x < 10 || y < 10 || x > 1000 || y > 1000)
                 throw std::overflow_error("incorrect size") ;
         }
