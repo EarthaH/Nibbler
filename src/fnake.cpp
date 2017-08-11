@@ -1,4 +1,4 @@
-#include "fnake.hpp"
+#include "../includes/fnake.hpp"
 
 Fnake::Fnake() : _size(4), _direction(RIGHT)
 {
@@ -66,6 +66,7 @@ void    Fnake::setSize(int size)
 void    Fnake::setDirection(int dir)
 {
     this->_direction = dir;
+    //std::cout << "diriction " << this->_direction << std::endl;
 }
 
 void    Fnake::moveBody()

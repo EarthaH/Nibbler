@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "../includes/header.hpp"
 
 int     x;
 int     y;
@@ -19,9 +19,9 @@ void    getSize(int ac, char **av)
         {
             std::string a1(av[1]);
             std::string a2(av[2]);
-            x = allNum(a1) ? atoi(av[1]) : throw std::overflow_error("incorrect size");
-            y = allNum(a2) ? atoi(av[2]) : throw std::overflow_error("incorrect size");
-            if (x < 10 || y < 10 || x > 1000 || y > 1000)
+            x = allNum(a1) ? atoi(av[1]) + 1 : throw std::overflow_error("incorrect size");
+            y = allNum(a2) ? atoi(av[2]) + 1 : throw std::overflow_error("incorrect size");
+            if (x < 6 || y < 6 || x > 201 || y > 201)
                 throw std::overflow_error("incorrect size") ;
         }
         catch (...)
@@ -33,7 +33,7 @@ void    getSize(int ac, char **av)
     }
     else
     {
-        std::cout << "It seems you need womans help... Usage: av[1] = width, av[2] = height" << std::endl;
+        std::cout << "It seems you need help... Usage: av[1] = width, av[2] = height" << std::endl;
         exit(0);
     }
 }

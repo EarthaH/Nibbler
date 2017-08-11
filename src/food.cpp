@@ -1,4 +1,4 @@
-#include "food.hpp"
+#include "../includes/food.hpp"
 //////////////////////
 
 bool    fnakeHit(Fnake const &, Object &, int);
@@ -20,8 +20,8 @@ Food::Food(int x, int y) : _eaten(false)
 
 Food::Food(Fnake const * fnake, int w, int h) : _eaten(false)
 {
-    int     x = rand() % w;
-    int     y = rand() % h;
+    int     x = rand() % (w - 1) + 1;
+    int     y = rand() % (h - 1) + 1;
 
     while (fnakeHit(*fnake, x, y, 0))
     {
@@ -57,5 +57,4 @@ void    Food::setEaten(bool eaten)
     this->_eaten = eaten;
     if (this->_eaten)
         delete this;
-    std::cout << "Food eaten." << std::endl;
 }

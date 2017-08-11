@@ -1,4 +1,4 @@
-#include "object.hpp"
+#include "../includes/object.hpp"
 
 Object::Object() : _x(10), _y(10), _ch('*')
 {
@@ -12,7 +12,7 @@ Object::Object(Object const & copy)
 
 Object::Object(int x, int y, char ch) : _x(x), _y(y), _ch(ch)
 {
-    std::cout << "Object '" << _ch << "' created at: " << _x << " " << _y << std::endl;
+
 }
 
 Object const & Object::operator=(Object const & copy)
@@ -50,6 +50,11 @@ int     Object::getOldY()
     return (this->_oldY);
 }
 
+char    Object::getCh()
+{
+    return (this->_ch);
+}
+
 void    Object::setX(int x)
 {
     this->_x = x;
@@ -73,5 +78,4 @@ void    Object::init(int x, int y, char ch)
     this->_x = x;
     this->_y = y;
     this->_ch = ch;
-    std::cout << "Object '" << _ch << "' init at: " << _x << " " << _y << std::endl; 
 }

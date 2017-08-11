@@ -22,6 +22,7 @@ class Object
         int     getY();
         int     getOldX();
         int     getOldY();
+        char    getCh();
         void    setX(int);
         void    setY(int);
         void    move(int, int);
